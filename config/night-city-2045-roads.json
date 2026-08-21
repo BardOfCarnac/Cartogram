@@ -1,0 +1,38 @@
+{
+  "dataset": "night-city-2045",
+  "coordinate_space": {
+    "width_px": 5175,
+    "height_px": 7966,
+    "origin": "top-left",
+    "x_axis": "right",
+    "y_axis": "down"
+  },
+  "display": {
+    "classes": {
+      "local": {
+        "stroke": "#cdd2dc",
+        "width_px": 9
+      },
+      "major": {
+        "stroke": "#ffeb14",
+        "width_px": 19
+      }
+    },
+    "line_join": "round",
+    "segment_cap": "butt",
+    "junction_rendering": "node-disc",
+    "angle_snapping": false
+  },
+  "cleanup": {
+    "endpoint_cluster_tolerance_px": 2,
+    "micro_stub_max_length_px": 7,
+    "micro_loop_max_length_px": 12,
+    "routing_graph_modified": false
+  },
+  "source_graph": {
+    "expected_file": "data/night-city-2045/roads/night_city_2045_road_graph_v12.geojson",
+    "edge_kind": "road_edge",
+    "class_property": "road_class",
+    "known_classes": ["local", "major"]
+  }
+}

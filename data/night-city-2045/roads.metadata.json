@@ -1,0 +1,37 @@
+{
+  "source_asset": "night_city_2045_road_graph_v12.geojson",
+  "type": "FeatureCollection",
+  "name": "Night City 2045 road graph v2",
+  "source_pdf": "RTG-CPR-Night_City_2045-150dpi.pdf",
+  "source_pdf_page": 68,
+  "source_embedded_image": "PDF page 68 image object 13234",
+  "source_image_width_px": 5175,
+  "source_image_height_px": 7966,
+  "coordinate_system": "embedded clean-map image pixels; origin top-left; x right; y down",
+  "road_mask": {
+    "yellow_major_threshold": "R>180,G>150,B<130,(R-B)>75,(G-B)>60",
+    "neutral_local_threshold": "min(R,G,B)>115 and max(R,G,B)-min(R,G,B)<38",
+    "morphological_close": "3x3 elliptical",
+    "selected_component_min_area_px": 100,
+    "selected_component_min_left_px": 1100
+  },
+  "skeleton": {
+    "connectivity": 8,
+    "junction_seed": "skeleton degree != 2",
+    "node_region_expansion_iterations": 3,
+    "polyline_simplification_epsilon_px": 2.0
+  },
+  "nodes": 1681,
+  "edges": 2207,
+  "graph_components": 33,
+  "largest_component_nodes": 1571,
+  "major_edges": 567,
+  "local_edges": 1640,
+  "street_attribution": {
+    "labelled_composite": "1000008502.png",
+    "registration_method": "SIFT + RANSAC affine",
+    "registration_good_matches": 610,
+    "registration_inliers": 559
+  },
+  "migration_note": "Metadata extracted from the current v12 generated asset. Migrate the original GeoJSON byte-for-byte; do not reconstruct it from this metadata file."
+}

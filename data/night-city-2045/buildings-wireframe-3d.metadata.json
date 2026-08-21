@@ -1,0 +1,28 @@
+{
+  "source_asset": "night_city_buildings_wireframe_3d.json",
+  "source": "Night+City2045_2 (1).skp",
+  "source_layer": "buildings",
+  "building_placements": 16383,
+  "unique_line_segments": 365356,
+  "source_line_segments_before_dedup": 408973,
+  "map_space": {
+    "width": 6930,
+    "height": 5562,
+    "px_per_inch": 0.017533351586320734,
+    "offset_x_px": 1328.6103203859448,
+    "offset_y_px": 5038.968244382606,
+    "coordinate_system": "X right, Y height, Z down-map",
+    "bounds": {
+      "min": [1635.2354736328125, -11.734926223754883, 63.203983306884766],
+      "max": [5885.0439453125, 308.047119140625, 5069.416015625]
+    }
+  },
+  "metres": {
+    "coordinate_system": "X right/east-west, Y height, Z inverted SketchUp Y",
+    "bounds": {
+      "min": [444.19793701171875, -17.000009536743164, -7208.22900390625],
+      "max": [6600.75830078125, 446.2579345703125, 44.10870361328125]
+    }
+  },
+  "migration_note": "Metadata extracted from the current generated asset. Migrate the original JSON byte-for-byte; do not reconstruct the geometry from this metadata file."
+}

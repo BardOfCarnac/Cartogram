@@ -17,10 +17,16 @@ Product-specific systems such as accounts, campaigns, inventories, encounter rul
 
 ## Current Night City work
 
-Existing generated assets include:
+Current generated/source datasets include:
 
 - `night_city_2045_road_graph_v12.geojson` — extracted and attributed road graph
 - `night_city_buildings_wireframe_3d.json` — building placements and deduplicated 3D wireframe geometry extracted from the SketchUp source model
+
+The road reconstruction/rendering decisions now live in the repository:
+
+- `data/night-city-2045/roads/README.md` — dataset status and conventions
+- `config/night-city-2045-roads.json` — current two-class road display configuration
+- `tools/render_night_city_roads.py` — clean SVG renderer using canonical graph geometry
 
 These generated datasets are being migrated into the repository. Official Cyberpunk RED PDFs and other third-party reference assets are **reference sources, not repository assets**, unless redistribution rights are explicitly established.
 

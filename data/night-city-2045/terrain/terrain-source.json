@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "description": "Canonical source and grid specification for the Night City map-aligned terrain model",
+  "night_city_grid": {
+    "width_px": 780,
+    "height_px": 1200,
+    "origin": "top-left",
+    "x_direction": "right",
+    "y_direction": "down",
+    "approx_m_per_pixel": 17.826391324
+  },
+  "source_dem": {
+    "working_filename": "USGS_1_n36w121.tif",
+    "provider": "USGS",
+    "note": "Large upstream source tile; not vendored in the repository. Use tools/build_night_city_heightfield.py with registration.json to regenerate the full aligned raster."
+  },
+  "aligned_raster": {
+    "working_filename": "night_city_map_aligned_heightfield.tif",
+    "dtype": "float32",
+    "vertical_units": "metres",
+    "working_sea_level_m": 0.0,
+    "observed_min_m": 0.0,
+    "observed_max_m_approx": 622.553,
+    "integration_rule": "Night City map point (x,y) samples aligned terrain raster pixel (x,y)."
+  },
+  "repository_terrain_representation": {
+    "terrain_contours": "terrain-contours-100m.geojson",
+    "contour_interval_m": 100,
+    "purpose": "Compact project-wide terrain reference. Regenerate the full raster for quantitative work requiring per-pixel elevation."
+  },
+  "registration_file": "registration.json"
+}

@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "basis": "trace-derived Morro Bay registration",
+  "map_image": {
+    "filename": "clean_map_thumb.jpg",
+    "width_px": 780,
+    "height_px": 1200,
+    "approx_m_per_pixel": 17.826391324,
+    "approx_width_km": 13.904585232719999,
+    "approx_height_km": 21.3916695888
+  },
+  "registration": {
+    "rotation_deg_clockwise": 11.27433436,
+    "anchor": {
+      "name": "CA-1 / CA-41 junction",
+      "lat": 35.380111,
+      "lon": -120.85625,
+      "screen_x": 731.0,
+      "screen_y": 675.0
+    },
+    "pixel_center_to_lonlat": {
+      "lon": {
+        "x_coeff": 0.00019261701448440937,
+        "y_coeff": 3.8398957614590734e-05,
+        "constant": -120.9254658421513
+      },
+      "lat": {
+        "x_coeff": 3.1307777248039e-05,
+        "y_coeff": -0.00015704620537326176,
+        "constant": 35.46951228729449
+      }
+    },
+    "geotiff_affine_corner_transform": [
+      0.00019261701448440937,
+      3.8398957614590734e-05,
+      -120.92558135013735,
+      3.1307777248039e-05,
+      -0.00015704620537326176,
+      35.469575156508554
+    ]
+  },
+  "integration_rule": "Existing Night City roads remain in map pixel coordinates. For a road point (x,y), sample the full-resolution heightfield at the same (x,y).",
+  "source_dem": "USGS_1_n36w121.tif"
+}

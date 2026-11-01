@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><title>Spaciel · Unified Icon Family v1</title><style>
+:root{color-scheme:dark;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#0c141c;color:#e6eef3;font-size:14px;line-height:1.45}
+main{max-width:1300px;margin:auto;padding:25px clamp(12px,2.8vw,32px) 60px}
+.head{display:flex;justify-content:space-between;gap:15px;align-items:flex-end;flex-wrap:wrap}
+.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.23em;font-weight:800;color:#9db2c0}
+h1{font-size:clamp(25px,4vw,41px);line-height:1.08;letter-spacing:-.042em;margin:6px 0 8px}p{margin:0}.deck{color:#aabcc8;font-size:13px;max-width:720px}
+.stats{display:flex;gap:20px}.stat b{font-size:26px;display:block;line-height:1.1}.stat span{color:#9aadb9;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:18px 0}
+button{font:inherit;cursor:pointer}button:disabled{opacity:.35;cursor:wait}
+.action{background:#1b2d39;border:1px solid #3c5260;color:#e8eff3;padding:9px 12px;border-radius:8px;font-size:12px;font-weight:700}
+.action.primary{background:#137c71;border-color:#1a9b8f;color:white}
+.action:hover{border-color:#86a8b6}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:13px 0 15px;color:#b4c5d0;font-size:12px}
+input[type=range]{width:150px;accent-color:#30c1ad}
+.samples{border:1px solid #344c5a;border-radius:10px;background:#13212c;padding:12px 16px;margin:12px 0 15px;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.samples .desc{font-size:12px;color:#a6bcca;max-width:470px}
+.tabs{display:flex;overflow-x:auto;gap:6px;margin:14px -2px 18px;padding:3px 2px 8px;scrollbar-width:thin}
+.tabs button{white-space:nowrap;flex:none;border:1px solid #334957;background:#152631;color:#adbeca;border-radius:7px;padding:8px 11px;display:flex;gap:7px;align-items:center;font-size:11px;font-weight:700}
+.tabs button.on{border-color:#8babbd;background:#29404e;color:white}
+.tabs i{height:9px;width:9px;border-radius:50%}
+.family{margin:0 0 23px}.fh{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.fh .sw{width:11px;height:11px;flex:none;border-radius:50%}.fh h3{font-size:17px;letter-spacing:-.015em;margin:0}.fh p{font-size:11px;color:#9bb0bd}.fh .num{margin-left:auto;font-size:10px;color:#7f9aab;letter-spacing:.09em}
+.icons{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.tile{border:1px solid #304957;background:#172936;color:inherit;min-width:0;border-radius:10px;padding:12px 8px 9px;display:flex;align-items:center;flex-direction:column;justify-content:flex-start;min-height:166px;transition:background .15s,border-color .15s}
+.tile.primary{background:#1d3340;border-top:3px solid #76a6b2;padding-top:10px}
+.tile:hover{border-color:#6792a4;background:#203946}.tile.selected{border-color:#2ad3bd;box-shadow:inset 0 0 0 1px #2ad3bd}
+.hero{display:flex;align-items:center;justify-content:center;width:68px;height:70px}
+.hero svg{height:49px;width:49px;overflow:visible}.primary .hero svg{width:56px;height:56px}
+.ik{font-size:9px;letter-spacing:.1em;color:#8fa8b7;font-weight:750}.iname{text-align:center;font-size:12px;font-weight:700;line-height:1.17;margin:5px 0 8px;min-height:27px}
+.sizes{margin-top:auto;border-top:1px solid #304754;width:100%;padding-top:7px;display:flex;align-items:center;gap:6px;justify-content:center;font-size:10px;color:#8ba7b6}
+.test{display:flex;align-items:center;justify-content:center}.test svg{height:100%;width:100%;overflow:visible}
+#page[data-theme=day]{background:#f3f5f3;color:#23343d}
+#page[data-theme=day] .deck,#page[data-theme=day] .fh p,#page[data-theme=day] .stat span,#page[data-theme=day] .controls,#page[data-theme=day] .samples .desc{color:#516875}
+#page[data-theme=day] .samples{background:#e7eceb;border-color:#c4d0d2}
+#page[data-theme=day] .tile{background:#fff;border-color:#cdd8dc}
+#page[data-theme=day] .tile.primary{background:#e9f1f1}
+#page[data-theme=day] .sizes{border-color:#e1e6e7}
+#page[data-theme=day] .ik,#page[data-theme=day] .num{color:#56717d}
+#page[data-theme=day] .tabs button{background:#edf1ef;border-color:#c4d0d2;color:#4a626e}
+#page[data-theme=day] .tabs button.on{background:#d3e5e0;border-color:#699988;color:#21383a}
+#page[data-theme=day] .action{background:#e8f0ee;border-color:#b7c9c8;color:#293d47}
+#page[data-theme=day] .action.primary{background:#137c71;color:white;border-color:#137c71}
+#page[data-theme=day] .eyebrow{color:#688491}
+#page[data-theme=day] .details{background:#fff;border-color:#c9d9d9}
+#page[data-theme=day] .detailtext,#page[data-theme=day] .details small{color:#5a737c}
+.details{position:sticky;bottom:12px;margin:17px 0;background:#0e1d28;border:1px solid #496473;border-radius:12px;box-shadow:0 10px 26px #0005;padding:13px;z-index:2}
+.details[hidden]{display:none}.detailhead{display:flex;align-items:center;gap:12px}
+.details .title{font-size:16px;font-weight:800}.details small{font-size:11px;color:#a0b6c3}
+#detail-large{flex:none;width:82px;height:78px;display:flex;align-items:center;justify-content:center}
+#detail-large svg{width:72px;height:72px}.detailtext{font-size:11px;color:#aabec9;margin-left:auto}
+.sizeRow{display:flex;gap:14px;flex-wrap:wrap;align-items:end;padding:10px 0 0}
+.sizeCell{display:flex;flex-direction:column;justify-content:end;align-items:center;gap:5px;min-width:32px;min-height:67px}.sizeCell span{height:48px;display:flex;align-items:center;justify-content:center}.sizeCell small{font-size:10px;color:#91aebb}
+.close{margin-left:auto;border:1px solid #516876;border-radius:8px;background:transparent;color:inherit;padding:6px 10px}
+.footer{font-size:11px;color:#9aabb9;line-height:1.7;margin-top:19px}
+#state{font-size:11px;color:#98beb8;min-height:20px;margin:8px 0}
+@media(max-width:920px){.icons{grid-template-columns:repeat(3,minmax(0,1fr))}.tile{min-height:157px}}
+@media(max-width:560px){.icons{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.tile{min-height:153px}.stats{gap:12px}.stat b{font-size:22px}.toolbar{gap:6px}.action{font-size:11px;padding:8px 9px}.hero{height:59px}.hero svg{width:44px;height:44px}.primary .hero svg{width:49px;height:49px}.details{bottom:4px}.sizeRow{gap:7px}.sizeCell{min-width:27px}.fh h3{font-size:15px}}
+</style></head>
+<body id="page" data-theme="night"><main>
+<div class="head"><div><div class="eyebrow">SPACIEL / RADIAN ROUTING SYSTEMS · DESIGN TRIAL 01</div><h1>One city. Thirty-five symbols.</h1><p class="deck">A new, coherent set of solid vector pictograms for Night City 2045. Seven parent categories, four subtypes apiece. Designed for legibility at map scale, without round badges or unnecessary decoration.</p></div><div class="stats"><div class="stat"><b>07</b><span>Families</span></div><div class="stat"><b>35</b><span>Vector icons</span></div><div class="stat"><b>48²</b><span>Master grid</span></div></div></div>
+<div class="toolbar">
+<button class="action primary" id="svgzip">Download 35 SVGs (.zip)</button>
+<button class="action" id="pngzip">Download PNG masks (.zip)</button>
+<button class="action" id="manifest">Download manifest</button>
+<button class="action" id="mode">Switch to light map</button>
+<button class="action" id="ink">View single-ink icons</button>
+</div>
+<div class="samples"><div class="desc"><b>Optical size test.</b> Every icon uses a transparent background. The large examples are for visual comparison; the miniature below each is what you would actually see on Spaciel. Adjust the scale and compare on light and dark backgrounds.</div><div class="controls"><label for="range">Map size</label><input id="range" type="range" min="12" max="32" step="1" value="20"><b id="vsize">20 px</b></div></div>
+<div id="tabs" class="tabs" aria-label="Filter icon families"></div>
+<div id="atlas"></div>
+<div id="details" class="details" hidden><div class="detailhead"><div id="detail-large"></div><div><div id="detail-title" class="title"></div><small id="detail-sub"></small><div class="detailtext" id="detail-id"></div></div><button class="close" id="detail-close">Close</button></div><div class="sizeRow" id="detail-scale"></div></div>
+<div id="state" role="status"></div>
+<p class="footer">Version 1 design study. SVGs use <code>currentColor</code> and can be recoloured by Spaciel's approved category palette. Transparent PNGs are white-on-alpha for use as tintable masks. All existing V19 artwork, map data and bottom-bar animations remain unchanged. The ZIP downloads are built in your browser and work offline.</p>
+</main><script>(function appMain(){
+"use strict";
+const families=[
+{id:"civic",title:"Civic & Care",color:"#D55E00",subtitle:"Public life, wellbeing and institutions",entries:[["main","Civic & Care"],["medical","Medical & cyberware"],["education","Education & childcare"],["faith","Faith & memorials"],["public","Government, aid & emergency"]]},
+{id:"municipal",title:"Municipal",color:"#E69F00",subtitle:"City movement, operations and security",entries:[["main","Municipal"],["passenger","Passenger transport"],["freight","Freight & vehicle services"],["security","Security & faction facilities"],["infrastructure","City infrastructure"]]},
+{id:"shopping",title:"Shopping & Services",color:"#F0E442",subtitle:"Retail, merchandise and commercial services",entries:[["main","Shopping & Services"],["general","General retail"],["gear","Gear & technology"],["specialist","Specialist retail"],["services","Services & repair"]]},
+{id:"living",title:"Living & Lodging",color:"#009E73",subtitle:"Homes, short stays and communities",entries:[["main","Living & Lodging"],["homes","Homes & apartments"],["communities","Communities & estates"],["hotels","Hotels & short stays"],["shelters","Camps & shelters"]]},
+{id:"food",title:"Food & Nightlife",color:"#56B4E9",subtitle:"Eating, drinking and entertainment",entries:[["main","Food & Nightlife"],["restaurants","Restaurants"],["cafes","Cafés & bakeries"],["bars","Bars & pubs"],["clubs","Clubs & nightlife"]]},
+{id:"leisure",title:"Leisure & Culture",color:"#0072B2",subtitle:"Experiences, sports, heritage and green space",entries:[["main","Leisure & Culture"],["attractions","Attractions & games"],["sport","Sport & recreation"],["culture","Culture & landmarks"],["parks","Parks & open spaces"]]},
+{id:"work",title:"Work & Industry",color:"#CC79A7",subtitle:"Business, fabrication and technical facilities",entries:[["main","Work & Industry"],["offices","Offices & professional"],["media","Media & broadcasting"],["industry","Industry & utilities"],["warehouses","Warehouses & research"]]}
+];
+const R=(x,y,w,h,rx=0)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}"/>`;
+const C=(cx,cy,r)=>`<circle cx="${cx}" cy="${cy}" r="${r}"/>`;
+const P=d=>`<path d="${d}"/>`;
+const E=d=>`<path d="${d}" fill-rule="evenodd"/>`;
+const O=(d,w=3.4)=>`<path d="${d}" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+const poly=points=>`<polygon points="${points}"/>`;
+function gear(cx,cy){
+ let d=""; const N=32;
+ for(let i=0;i<N;i++){const a=-Math.PI/2+i*Math.PI*2/N; const rad=i%4===0||i%4===3?19:15;const x=(cx+rad*Math.cos(a)).toFixed(2),y=(cy+rad*Math.sin(a)).toFixed(2);d+=(i?"L":"M")+x+" "+y;}
+ d+="Z M"+(cx+6)+" "+cy+" a6 6 0 1 0 -12 0 a6 6 0 1 0 12 0 Z";
+ return E(d);
+}
+const shapes={
+"civic:main":P("M24 9c-3-4-11-2-11 4 0 5 11 11 11 11s11-6 11-11c0-6-8-8-11-4z")+P("M6 29h9l5 3h11l5-3h6v5H34l-4 7H18l-6-7H6z"),
+"civic:medical":P("M18 7h12v11h11v12H30v11H18V30H7V18h11z"),
+"civic:education":P("M6 10q9-3 18 3v28q-9-7-18-4z")+P("M42 10q-9-3-18 3v28q9-7 18-4z")+O("M24 13v25",2.6),
+"civic:faith":P("M24 5c2 8 11 12 11 22 0 8-5 14-11 14S13 35 13 27c0-7 6-13 6-18 2 2 3 5 5 8 3-4 1-8 0-12z")+P("M24 24c2 5 5 7 5 11a5 5 0 0 1-10 0c0-4 2-7 5-11z"),
+"civic:public":poly("24,6 44,18 4,18")+R(6,20,36,4,1)+R(9,24,6,13)+R(21,24,6,13)+R(33,24,6,13)+R(5,39,38,4,1),
+"municipal:main":O("M14 14h20M14 14v21M34 14v21M14 35h20",4)+C(14,14,6)+C(34,14,6)+C(14,35,6)+C(34,35,6)+C(24,24.5,4),
+"municipal:passenger":E("M12 6h24a5 5 0 0 1 5 5v23a5 5 0 0 1-5 5H12a5 5 0 0 1-5-5V11a5 5 0 0 1 5-5zM13 13v13h22V13z")+C(15,33,3)+C(33,33,3)+R(12,40,5,3,1)+R(31,40,5,3,1),
+"municipal:freight":R(4,15,23,20,2)+P("M28 21h8l8 9v5H28z")+C(13,37,5)+C(36,37,5)+R(7,11,20,3,1),
+"municipal:security":E("M24 4l17 7v13c0 11-9 17-17 21C16 41 7 35 7 24V11z M24 13l-9 4v7c0 5 3 9 9 12 6-3 9-7 9-12v-7z"),
+"municipal:infrastructure":R(7,7,5,35,1)+R(36,7,5,35,1)+R(12,12,24,4,1)+R(12,27,24,4,1)+P("M12 16l17 11h-6L12 20z")+P("M36 16L19 27h6l11-7z")+R(4,39,40,4,1),
+"shopping:main":P("M7 7h34l4 13c-1 5-6 6-10 3-4 4-9 4-12 0-4 4-9 4-12 0-4 3-9 2-10-3z")+R(7,27,34,4,1)+R(7,31,5,12,1)+R(36,31,5,12,1)+R(17,31,14,12,1),
+"shopping:general":P("M7 21h34l-5 20H12z")+O("M15 21l6-13M33 21L27 8",3.8)+R(20,27,4,8,1)+R(28,27,4,8,1),
+"shopping:gear":E("M13 12h22v24H13z M20 19v10h8V19z")+Array.from({length:4},(_,i)=>R(6,16+i*5,7,3,1)+R(35,16+i*5,7,3,1)+R(16+i*5,5,3,7,1)+R(16+i*5,36,3,7,1)).join(""),
+"shopping:specialist":E("M7 7h23l13 17-19 19L5 24z M15 15a3 3 0 1 0 6 0a3 3 0 1 0-6 0z"),
+"shopping:services":P("M32 5a13 13 0 0 0-12 18L7 36a6 6 0 0 0 9 9l14-14A13 13 0 0 0 43 15l-9 9-9-9z")+C(12,40,2.5),
+"living:main":poly("24,4 45,24 38,24 38,42 10,42 10,24 3,24")+R(16,28,6,14,0)+R(27,28,6,14,0),
+"living:homes":E("M10 7h28v36H10z M16 15v7h6v-7z M26 15v7h6v-7z M16 26v7h6v-7z M26 26v7h6v-7z M21 37v6h7v-6z"),
+"living:communities":poly("8,21 18,10 28,21")+poly("23,18 34,7 45,18")+R(9,21,18,18,1)+R(25,18,19,21,1)+R(16,30,5,9)+R(33,29,5,10),
+"living:hotels":R(6,12,5,30,1)+R(11,29,31,10,3)+R(13,19,12,9,3)+R(26,23,16,5,1)+R(38,39,4,4,0),
+"living:shelters":E("M24 5l20 36H4z M24 20l-7 21h14z")+O("M24 5v-2",3.2),
+"food:main":R(8,5,4,18,1)+R(15,5,4,18,1)+R(22,5,4,18,1)+R(8,19,18,7,3)+R(17,24,5,19,1)+P("M36 5c-8 8-8 17-8 22h8v16h5V5z"),
+"food:restaurants":E("M24 7a17 17 0 1 1 0 34a17 17 0 1 1 0-34z M24 14a10 10 0 1 0 0 20a10 10 0 1 0 0-20z")+R(4,11,3,26,1)+R(41,11,3,26,1),
+"food:cafes":P("M8 15h27v13c0 8-5 13-13 13S8 36 8 28z")+O("M35 17h4c9 0 7 13-4 13",4)+O("M16 5q-5 4 0 7M26 5q-5 4 0 7",2.8),
+"food:bars":E("M12 9h24l-4 19H16z M18 14l2 8h8l2-8z")+R(22,28,4,11,1)+R(15,39,18,4,1)+O("M28 8l6-5",3),
+"food:clubs":E("M24 5a19 19 0 1 1 0 38a19 19 0 1 1 0-38z M24 12a12 12 0 1 0 0 24a12 12 0 1 0 0-24z")+C(24,24,5)+R(7,23,7,4,1),
+"leisure:main":E("M6 10h36v9c-6 0-6 10 0 10v9H6v-9c6 0 6-10 0-10z M23 17l-3 5-6 1 4 5-1 6 6-3 6 3-1-6 4-5-6-1z"),
+"leisure:attractions":O("M24 5a15 15 0 1 1 0 30a15 15 0 1 1 0-30z",3.3)+O("M24 5v30M9 20h30M13 9l22 22M35 9L13 31",2.7)+P("M24 27l-12 16h5l7-10 7 10h5z")+C(24,20,4),
+"leisure:sport":O("M24 6a18 18 0 1 0 0 36a18 18 0 1 0 0-36z",3.6)+poly("24,15 34,22 30,33 18,33 14,22")+O("M24 15l-1-8M14 22L8 19M34 22l7-3M18 33l-4 6M30 33l4 6",2.8),
+"leisure:culture":poly("24,5 39,10 39,14 9,14 9,10")+R(10,18,6,19,1)+R(21,18,6,19,1)+R(32,18,6,19,1)+R(8,39,32,4,1),
+"leisure:parks":P("M24 4L9 25h8L6 37h36L31 25h8z")+R(21,36,6,8,1),
+"work:main":gear(24,24),
+"work:offices":E("M7 15h34v27H7z M17 15v-5h14v5h-5v-2h-4v2z M12 23v7h24v-7z")+R(18,26,12,9,1),
+"work:media":P("M24 7l-7 35h5l2-12 2 12h5z")+O("M15 11Q4 24 15 36M33 11Q44 24 33 36",3)+O("M9 6Q-5 24 9 42M39 6Q53 24 39 42",2.5)+C(24,8,4),
+"work:industry":P("M5 24l10-8v8l10-8v8l10-8v8l8-4v22H5z")+R(8,5,6,18,1)+R(28,30,9,12,1)+R(13,30,9,12,1),
+"work:warehouses":poly("24,6 45,19 45,42 3,42 3,19")+R(9,27,30,15,1)+R(12,30,24,3,1)+R(12,36,24,3,1)
+};
+let models=[];
+for(const f of families)for(const [key,name] of f.entries){
+ const id=f.id+":"+key;models.push({id,name,family:f.id,familyName:f.title,color:f.color,main:key==="main",shape:shapes[id]});
+}
+if(models.length!==35||models.some(x=>!x.shape))throw Error("Missing icon geometry");
+let size=20,filter="all",theme="night",tint="family",active=null;
+const $=x=>document.getElementById(x);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function svg(m,color,px=48){
+ const chosen=color||"currentColor";return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="${px}" height="${px}" color="${chosen}" fill="currentColor" role="img" aria-label="${esc(m.name)}">${m.shape}</svg>`;
+}
+function swatchColor(m){return tint==="mono"?(theme==="day"?"#182632":"#F1F5F7"):m.color}
+function render(){
+ const groups=filter==="all"?families:families.filter(f=>f.id===filter);
+ $("atlas").innerHTML=groups.map(f=>`<section class="family"><div class="fh"><span class="sw" style="background:${f.color}"></span><div><h3>${esc(f.title)}</h3><p>${esc(f.subtitle)}</p></div><span class="num">05 / 05</span></div><div class="icons">${models.filter(m=>m.family===f.id).map(m=>`<button type="button" class="tile ${m.main?"primary":""} ${active===m.id?"selected":""}" data-id="${m.id}"><div class="hero" style="color:${swatchColor(m)}">${svg(m)}</div><div class="ik">${m.main?"01 · MAIN":"SUBTYPE"}</div><div class="iname">${esc(m.name)}</div><div class="sizes"><div class="test" style="color:${swatchColor(m)};width:${size}px;height:${size}px">${svg(m,null,size)}</div><span>${size}px</span></div></button>`).join("")}</div></section>`).join("");
+ if(active)detail();
+ $("vsize").textContent=size+" px";
+ $("range").value=size;
+ $("page").dataset.theme=theme;
+ $("page").dataset.ink=tint;
+ $("mode").textContent=theme==="night"?"Switch to light map":"Switch to dark map";
+ $("ink").textContent=tint==="family"?"View single-ink icons":"View family colours";
+}
+function detail(){
+ const m=models.find(v=>v.id===active);if(!m)return;
+ $("details").hidden=false;
+ $("detail-title").textContent=m.name;
+ $("detail-sub").textContent=m.familyName+" · "+(m.main?"main icon":"subtype");
+ $("detail-large").innerHTML=svg(m,null,96);
+ $("detail-large").style.color=swatchColor(m);
+ $("detail-scale").innerHTML=[12,16,20,24,32,48].map(s=>`<div class="sizeCell" style="color:${swatchColor(m)}"><span>${svg(m,null,s)}</span><small>${s}px</small></div>`).join("");
+ $("detail-id").textContent=m.id;
+}
+$("atlas").addEventListener("click",e=>{
+ const b=e.target.closest("button[data-id]");if(!b)return;
+ active=b.dataset.id;detail();
+ document.querySelectorAll(".tile").forEach(x=>x.classList.toggle("selected",x.dataset.id===active));
+});
+$("tabs").addEventListener("click",e=>{
+ const b=e.target.closest("button[data-family]");if(!b)return;filter=b.dataset.family;
+ document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("on",x.dataset.family===filter));
+ render();
+});
+$("range").addEventListener("input",e=>{size=Number(e.target.value);render()});
+$("mode").addEventListener("click",()=>{theme=theme==="night"?"day":"night";render()});
+$("ink").addEventListener("click",()=>{tint=tint==="family"?"mono":"family";render()});
+$("detail-close").addEventListener("click",()=>{$("details").hidden=true;active=null;document.querySelectorAll(".tile").forEach(x=>x.classList.remove("selected"))});
+function download(data,mime,name){
+ const url=URL.createObjectURL(new Blob([data],{type:mime}));const a=document.createElement("a");a.href=url;a.download=name;a.style.display="none";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+const encoder=new TextEncoder();
+let crcTable=null;
+function crc32(data){
+ if(!crcTable){crcTable=Array.from({length:256},(_,n)=>{let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;return c>>>0;});}
+ let c=0xFFFFFFFF;for(const b of data)c=crcTable[(c^b)&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0;
+}
+function zip(items){
+ let locals=[],central=[],at=0,cs=0;
+ const put16=(dv,p,x)=>dv.setUint16(p,x,true),put32=(dv,p,x)=>dv.setUint32(p,x>>>0,true);
+ for(const item of items){
+ const name=encoder.encode(item.name),data=item.data instanceof Uint8Array?item.data:encoder.encode(item.data);
+ const crc=crc32(data),n=name.length,h=new Uint8Array(30+n);
+ const d=new DataView(h.buffer);
+ put32(d,0,0x04034b50);put16(d,4,20);put16(d,6,0);put16(d,8,0);put32(d,14,crc);put32(d,18,data.length);put32(d,22,data.length);put16(d,26,n);h.set(name,30);
+ locals.push(h,data);
+ const c=new Uint8Array(46+n),v=new DataView(c.buffer);
+ put32(v,0,0x02014b50);put16(v,4,20);put16(v,6,20);put16(v,8,0);put16(v,10,0);put32(v,16,crc);put32(v,20,data.length);put32(v,24,data.length);put16(v,28,n);put32(v,42,at);c.set(name,46);
+ central.push(c);cs+=c.length;at+=h.length+data.length;
+ }
+ const end=new Uint8Array(22),v=new DataView(end.buffer);put32(v,0,0x06054b50);put16(v,8,items.length);put16(v,10,items.length);put32(v,12,cs);put32(v,16,at);
+ return new Blob([...locals,...central,end],{type:"application/zip"});
+}
+const manifest=()=>JSON.stringify({name:"Spaciel unified pictogram family",version:"1.0.0-draft",design:"solid-pictograms",base_viewbox:"0 0 48 48",license:"Original generated pictograms for user's Spaciel project",categories:families.map(f=>({id:f.id,name:f.title,color:f.color,icons:models.filter(m=>m.family===f.id).map(m=>({id:m.id,title:m.name,path:"svg/"+m.family+"/"+m.id.split(":")[1]+".svg"}))}))},null,2);
+const svgItems=()=>models.map(m=>({name:"svg/"+m.family+"/"+m.id.split(":")[1]+".svg",data:svg(m)}));
+async function pngData(model,px){
+ return new Promise((resolve,reject)=>{
+ const im=new Image(),blob=new Blob([svg(model,"#ffffff",px)],{type:"image/svg+xml"}),url=URL.createObjectURL(blob);
+ im.onload=()=>{
+ try{const cv=document.createElement("canvas");cv.width=cv.height=px;const c=cv.getContext("2d");c.clearRect(0,0,px,px);c.drawImage(im,0,0,px,px);cv.toBlob(b=>{URL.revokeObjectURL(url);if(!b)return reject(Error("PNG export unavailable"));b.arrayBuffer().then(a=>resolve(new Uint8Array(a))).catch(reject)},"image/png");}catch(e){URL.revokeObjectURL(url);reject(e);}
+ };
+ im.onerror=()=>{URL.revokeObjectURL(url);reject(Error("SVG rendering unavailable"))};im.src=url;
+ });
+}
+function dlZip(blob,name){const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);}
+$("svgzip").addEventListener("click",()=>{
+ const items=[...svgItems(),{name:"manifest.json",data:manifest()},{name:"README.txt",data:"SPACIEL ICON FAMILY v1\n35 original solid vector icons in 7 colour families.\nSVG geometry uses currentColor, so Spaciel can tint it with its approved category spectrum.\nAll symbols share a 48x48 viewBox. Smallest-detail designs should be inspected at 16px and below.\nNo original V19 icons or map assets are overwritten.\n"}];
+ dlZip(zip(items),"Spaciel_35_Icon_SVG_Pack_v1.zip");
+ $("state").textContent="SVG pack exported: 35 icons plus manifest.";
+});
+$("pngzip").addEventListener("click",async()=>{
+ const btn=$("pngzip");btn.disabled=true;$("state").textContent="Rendering white-mask PNGs for all 35 icons…";
+ try{
+ const items=[{name:"manifest.json",data:manifest()}];
+ for(let j=0;j<models.length;j++){const m=models[j],slug=m.id.replace(":","_");items.push({name:"png/48/"+slug+".png",data:await pngData(m,48)},{name:"png/96/"+slug+".png",data:await pngData(m,96)});}
+ dlZip(zip(items),"Spaciel_35_Icon_Transparent_PNG_Pack_v1.zip");
+ $("state").textContent="PNG pack exported: 70 transparent PNGs, white silhouettes for map tinting.";
+ }catch(e){$("state").textContent="PNG export failed: "+e.message+"; SVG download remains available.";}finally{btn.disabled=false;}
+});
+$("manifest").addEventListener("click",()=>download(manifest(),"application/json","Spaciel_Icon_Manifest_v1.json"));
+$("page").dataset.theme=theme;
+$("tabs").innerHTML='<button data-family="all" class="on">All 35</button>'+families.map(f=>`<button data-family="${f.id}"><i style="background:${f.color}"></i>${esc(f.title)}</button>`).join("");
+$("state").textContent="35 vector symbols loaded. Select any icon to inspect it from 12 to 48 pixels.";
+render();
+})()</script></body></html>

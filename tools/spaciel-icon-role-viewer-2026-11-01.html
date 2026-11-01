@@ -80,6 +80,7 @@ small.label{font-size:10px;color:#90afbe;letter-spacing:.04em}
 (()=>{
 const data=JSON.parse(document.getElementById('spaciel-data').textContent);
 const old=data.olds,roles=data.roles,families=data.families,oldById=Object.fromEntries(old.map(x=>[x.id,x])),roleById=Object.fromEntries(roles.map(x=>[x.id,x]));
+const oldFamilies=[...new Set(old.map(x=>x.family))].map(id=>{const x=old.find(o=>o.family===id);return {oldId:id,oldName:x.familyName,oldColor:x.color}});
 const $=id=>document.getElementById(id);
 let assigned={},selectedOld=null,selectedRole=null,undo=[],original=false;
 try{const e=JSON.parse($('spaciel-saved').textContent||'{}');const ls=JSON.parse(localStorage.getItem('spaciel-v19-icon-role-mapping')||'null');assigned=e.embedded?e.map:(ls?.map||{});}catch(e){}
@@ -115,7 +116,7 @@ function renderOld(){
  const out=$('originalList');out.replaceChildren();
  const q=$('search').value.trim().toLowerCase(),fam=$('familyFilter').value,status=$('usedFilter').value;
  let shown=0;
- for(const group of families){
+ for(const group of oldFamilies){
   const members=old.filter(o=>o.family===group.oldId);
   if(fam&&fam!==group.oldId)continue;
   const matches=members.filter(o=>{
@@ -194,7 +195,7 @@ const famNames={
  medical:'Medical',transport:'Transport',commerce:'Commerce',residence:'Residence','food-social':'Food / Social',security:'Security','work-industry':'Work / Industry'
 };
 for(const [id,name]of Object.entries(famNames)){const opt=document.createElement('option');opt.value=id;opt.textContent=name;$('familyFilter').append(opt)}
-data.families=[...Object.entries(famNames)].map(([id,name])=>({oldId:id,oldName:name,oldColor:old.find(o=>o.family===id).color}));
+
 render();
 })();
 </script></body></html>
